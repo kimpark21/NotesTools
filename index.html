@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff6fb" />
+  <meta name="description" content="KINOTES TUTORIAL TOOLS — font downloader yang cantik, praktis, dan membawa misi berbagi." />
+  <title>KINOTES TUTORIAL TOOLS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a class="brand" href="#top" aria-label="KINOTES home">
+        <span class="brand-mark">K</span>
+        <span><strong>KINOTES</strong><small>TUTORIAL TOOLS</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#downloader">Downloader</a>
+        <a href="#impact">Donasi</a>
+        <a href="#transparency">Transparansi</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a class="pill ghost" href="#impact">♡ Misi kami</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="eyebrow">✦ Download font. Tebarkan manfaat.</div>
+        <h1>Font downloader yang <span>ringan, cantik,</span> dan punya tujuan baik.</h1>
+        <p>KINOTES TUTORIAL TOOLS membantu kamu mencari dan mengunduh beberapa font DaFont sekaligus, menghindari duplikat, dan mengelola antrean dengan lebih rapi.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#downloader">Mulai download <span>↗</span></a>
+          <a class="btn secondary" href="#transparency">Lihat transparansi</a>
+        </div>
+        <div class="micro-proof">
+          <div><b>100%</b><span>akses gratis</span></div>
+          <div><b>Anti</b><span>duplikat lokal</span></div>
+          <div><b>♡</b><span>berorientasi sosial</span></div>
+        </div>
+      </div>
+      <div class="hero-card glass">
+        <div class="card-top"><span class="dot pink"></span><span class="dot cream"></span><span class="dot pale"></span><small>kinotes.tools</small></div>
+        <div class="preview-pane">
+          <span class="mini-label">FONT QUEUE</span>
+          <h3>Your creative<br><em>font companion.</em></h3>
+          <div class="fake-search">Search dreamy font... <span>⌘ K</span></div>
+          <div class="font-row"><span class="avatar">Aa</span><div><b>Lovely Sunday</b><small>Script · personal use</small></div><i>✓</i></div>
+          <div class="font-row"><span class="avatar serif">Ag</span><div><b>Clara Serif</b><small>Serif · demo</small></div><i>+</i></div>
+          <div class="font-row"><span class="avatar round">Bb</span><div><b>Bloomy</b><small>Display · free</small></div><i>+</i></div>
+          <div class="impact-chip">♡ Setiap dukungan membantu misi berbagi</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="marquee" aria-hidden="true"><div>ANTI DUPLIKAT ✦ BATCH DOWNLOAD ✦ DONATION TRANSPARENCY ✦ RESPONSIVE UI ✦ FONT QUEUE ✦</div></section>
+
+    <section id="downloader" class="section container">
+      <div class="section-head center">
+        <span class="kicker">01 — FONT DOWNLOADER</span>
+        <h2>Cari, pilih, lalu download.</h2>
+        <p>Masukkan nama font atau kata kunci. Pilih beberapa font, lalu unduh dari antrean. Maksimal 12 file per batch agar tetap ramah terhadap sumber.</p>
+      </div>
+
+      <div class="tool-shell glass">
+        <div class="tool-tabs">
+          <button class="tab active" data-tab="search">Cari font</button>
+          <button class="tab" data-tab="links">Tempel link</button>
+          <div class="tab-spacer"></div>
+          <span id="queueCount" class="queue-count">0 dipilih</span>
+        </div>
+
+        <div id="panelAuto" class="tool-panel active">
+          <div class="auto-hero">
+            <span class="kicker">ONE INPUT · MANY FONTS</span>
+            <h2>Masukkan jumlah font.</h2>
+            <p>Contoh <b>100</b> → KINOTES mengambil daftar font otomatis lalu mengunduhnya satu per satu. Tidak perlu memasukkan 100 link.</p>
+          </div>
+          <form id="autoForm" class="quantity-form">
+            <label for="fontCount">Jumlah font yang ingin di-download</label>
+            <div class="quantity-row">
+              <input id="fontCount" type="number" min="1" max="500" value="100" inputmode="numeric" />
+              <button class="btn primary" type="submit">Mulai download otomatis <span>↓</span></button>
+            </div>
+            <div class="quantity-meta"><span>Maksimal 500 font per sesi</span><span>Anti-duplikat aktif</span><span>Diproses berurutan</span></div>
+          </form>
+          <div id="autoProgress" class="auto-progress hidden">
+            <div class="progress-top"><div><span class="kicker">AUTO DOWNLOAD</span><b id="progressLabel">Menyiapkan…</b></div><strong id="progressPercent">0%</strong></div>
+            <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+            <div class="progress-stats"><span id="progressDone">0 berhasil</span><span id="progressSkip">0 dilewati</span><span id="progressFail">0 gagal</span></div>
+          </div>
+          <div id="autoLog" class="auto-log hidden"></div>
+        </div>
+
+        <div id="panelSearch" class="tool-panel">
+          <form id="searchForm" class="search-box">
+            <span>⌕</span>
+            <input id="searchInput" autocomplete="off" placeholder="Contoh: vintage, handwritten, wedding..." />
+            <button class="btn primary small" type="submit">Cari</button>
+          </form>
+          <div class="tool-meta"><span>Tip: cek lisensi font sebelum digunakan untuk proyek komersial.</span><button id="clearHistory" class="text-btn" type="button">Reset riwayat anti-duplikat</button></div>
+          <div id="status" class="status hidden"></div>
+          <div id="results" class="results empty-state">
+            <div class="empty-icon">Aa</div>
+            <h3>Temukan font favoritmu</h3>
+            <p>Hasil pencarian akan muncul di sini.</p>
+          </div>
+        </div>
+
+        <div id="panelLinks" class="tool-panel">
+          <label class="paste-label" for="bulkLinks">Tempel link halaman font DaFont, satu per baris</label>
+          <textarea id="bulkLinks" rows="8" placeholder="https://www.dafont.com/example.font\nhttps://www.dafont.com/another-font.font"></textarea>
+          <div class="paste-actions"><span>Maks. 500 link per batch</span><button id="parseLinks" class="btn primary small" type="button">Tambahkan ke antrean</button></div>
+        </div>
+
+        <div id="queuePanel" class="queue-panel hidden">
+          <div class="queue-head"><div><span class="kicker">DOWNLOAD QUEUE</span><h3>Siap diunduh</h3></div><button id="clearQueue" class="text-btn">Kosongkan</button></div>
+          <div id="queueList" class="queue-list"></div>
+          <div class="queue-footer">
+            <div><b id="queueSummary">0 font</b><small>Unduhan diproses berurutan agar stabil.</small></div>
+            <button id="downloadAll" class="btn primary">Download semua <span>↓</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact" class="section impact-section">
+      <div class="container impact-grid">
+        <div>
+          <span class="kicker">02 — OUR PURPOSE</span>
+          <h2>Tools kecil,<br><span>dampak nyata.</span></h2>
+          <p>Project ini gratis. Jika ada dukungan yang masuk melalui kanal donasi kami, targetnya adalah disalurkan untuk kegiatan sosial seperti bantuan ke panti asuhan dan pembagian makanan kepada orang yang membutuhkan.</p>
+          <div class="purpose-list">
+            <div><span>01</span><p><b>Panti asuhan</b><small>Kebutuhan harian, makanan, atau bantuan yang relevan.</small></p></div>
+            <div><span>02</span><p><b>Berbagi makanan</b><small>Paket makanan untuk masyarakat yang membutuhkan.</small></p></div>
+            <div><span>03</span><p><b>Laporan terbuka</b><small>Nominal masuk, penyaluran, bukti, dan saldo dipublikasikan.</small></p></div>
+          </div>
+        </div>
+        <div class="donation-card">
+          <div class="donation-emblem">♡<span>100%</span><small>social mission</small></div>
+          <h3>Dukung misi KINOTES</h3>
+          <p>Donasi bersifat sukarela dan tidak memengaruhi akses ke fitur tools.</p>
+          <a class="btn primary wide disabled" href="#transparency" aria-disabled="true">Link donasi segera hadir</a>
+          <small class="note">Ganti tombol ini dengan Saweria / Trakteer / platform donasi milikmu setelah siap.</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="transparency" class="section container">
+      <div class="section-head">
+        <span class="kicker">03 — TRANSPARENCY</span>
+        <h2>Semua angka bisa dilihat.</h2>
+        <p>Contoh dashboard transparansi. Setelah project berjalan, ubah datanya di <code>app.js</code> agar sesuai bukti transaksi sebenarnya.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card"><span>Total donasi</span><b id="totalDonasi">Rp0</b><small>Sejak project dimulai</small></div>
+        <div class="stat-card"><span>Sudah disalurkan</span><b id="totalDisalurkan">Rp0</b><small>Ke kegiatan sosial</small></div>
+        <div class="stat-card"><span>Saldo amanah</span><b id="saldoAmanah">Rp0</b><small>Menunggu penyaluran</small></div>
+      </div>
+      <div class="ledger glass">
+        <div class="ledger-head"><div><span class="kicker">PUBLIC LEDGER</span><h3>Riwayat penyaluran</h3></div><span class="verified-badge">✓ transparan</span></div>
+        <div id="ledgerBody" class="ledger-body"></div>
+      </div>
+    </section>
+
+    <section class="section ethics">
+      <div class="container ethics-grid">
+        <div class="ethics-card"><span>✦</span><h3>Tetap hormati lisensi font</h3><p>Tools ini mempermudah proses download, bukan mengubah hak penggunaan font. Selalu cek lisensi dan catatan author.</p></div>
+        <div class="ethics-card"><span>⌁</span><h3>Rate-limited by design</h3><p>Batch dibatasi agar penggunaan lebih stabil dan mengurangi permintaan berlebihan ke situs sumber.</p></div>
+        <div class="ethics-card"><span>♡</span><h3>Donasi bukan paywall</h3><p>Fitur utama tetap gratis. Dukungan bersifat opsional dan laporan penggunaan dana dipublikasikan.</p></div>
+      </div>
+    </section>
+
+    <section id="faq" class="section container faq-wrap">
+      <div class="section-head center"><span class="kicker">04 — FAQ</span><h2>Pertanyaan umum</h2></div>
+      <div class="faq-list">
+        <details><summary>Apakah tools ini gratis?<span>+</span></summary><p>Ya. Fitur downloader disediakan gratis. Donasi sepenuhnya sukarela.</p></details>
+        <details><summary>Bagaimana anti-duplikat bekerja?<span>+</span></summary><p>Browser menyimpan slug font yang sudah pernah berhasil kamu download di perangkat ini melalui localStorage. Font yang sama akan diberi tanda “sudah pernah”.</p></details>
+        <details><summary>Apakah semua font bebas dipakai komersial?<span>+</span></summary><p>Tidak. Lisensi setiap font berbeda. Selalu buka halaman font dan baca status lisensi serta catatan author sebelum penggunaan komersial.</p></details>
+        <details><summary>Apakah KINOTES berafiliasi dengan DaFont atau OpenAI?<span>+</span></summary><p>Tidak. KINOTES adalah project independen. DaFont adalah sumber font yang diakses pengguna; credit ChatGPT hanya menyatakan bantuan AI dalam proses pembuatan project.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><a class="brand footer-brand" href="#top"><span class="brand-mark">K</span><span><strong>KINOTES</strong><small>TUTORIAL TOOLS</small></span></a><p>Made for creators. Built with purpose.</p></div>
+      <div class="footer-center"><span class="ai-mark">✦</span><p>Built with assistance from <b>ChatGPT by OpenAI</b></p><small>Independent project — not affiliated with or endorsed by OpenAI.</small></div>
+      <div class="footer-right"><a href="#downloader">Downloader</a><a href="#impact">Donasi</a><a href="#transparency">Transparansi</a></div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> KINOTES TUTORIAL TOOLS</span><span>Use responsibly · Respect font licenses</span></div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
